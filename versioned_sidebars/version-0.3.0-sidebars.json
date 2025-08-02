@@ -38,7 +38,8 @@
       "type": "category",
       "label": "Advanced",
       "items": [
-        "advanced/building"
+        "advanced/building",
+        "advanced/building-windows"
       ]
     },
     {
