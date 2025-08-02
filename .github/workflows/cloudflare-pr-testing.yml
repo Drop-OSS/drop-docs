@@ -29,7 +29,7 @@ jobs:
         id: pr_number
         run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
       - name: Configure Docusaurus for PR deploy
-        run: sed -i 's/BASE_URL/${{ env.PR_NUMBER }}' docusaurus.config.ts
+        run: sed -i -e 's/BASE_URL/${{ env.PR_NUMBER }}/' docusaurus.config.ts
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
