@@ -1,5 +1,8 @@
 name: Deploy PR to Cloudflare Pages
 
+env:
+    base_url: test.quexeky.dev
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -29,7 +32,7 @@ jobs:
         id: pr_number
         run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
       - name: Configure Docusaurus for PR deploy
-        run: sed -i -e 's/BASE_URL/${{ env.PR_NUMBER }}/' docusaurus.config.ts
+        run: sed -i -e 's/BASE_URL/https://${{ env.PR_NUMBER }}.${{ env.base_url }}/' docusaurus.config.ts
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -47,5 +50,5 @@ jobs:
 
           
     outputs:
-      previewUrl: https://${{ env.PR_NUMBER }}.test.quexeky.dev
+      previewUrl: https://${{ env.PR_NUMBER }}.$${{ env.base_url }}
 
