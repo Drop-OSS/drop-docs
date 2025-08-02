@@ -206,7 +206,7 @@ For advanced exposure options, see [Exposing Your Instance](exposing.md).
 
 ### Installing Drop Client
 
-1. **Download the client** from [GitHub releases](https://github.com/Drop-OSS/drop-app/releases)
+1. **Download the client** from [https://droposs.org/download](https://droposs.org/download)
 2. **Install for your platform**
 3. **Open the client** and follow the connection wizard
 4. **Enter your server URL** (e.g., `http://[your-drop-server-ip]:3000`)
