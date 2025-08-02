@@ -111,4 +111,6 @@ NO_STRIP=true yarn tauri build
 ```
 
 This is a known issue in [Tauri](https://github.com/tauri-apps/tauri/issues/5781#issuecomment-1758815710).
+
+**Note:** For Windows-specific build instructions, see the [Building drop-app on Windows](building-windows.md) page.
 \*\*
