@@ -153,12 +153,14 @@ For detailed information, see [Library Sources](../library.md).
 ### Setting Up Your Library Source
 
 1. **In the admin interface**, go to "Library Sources"
-2. **Click "Add Library Source"**
-3. **Choose your library type:**
-   - **Drop-style:** Full feature support, recommended for new setups
-   - **Flat-style:** Compatible with existing libraries
-4. **Set the path** to your library directory (e.g., `/library`)
-5. **Save the configuration**
+2. **Click "Create source"**
+3. **Configure your library source:**
+   - **Name:** Enter a descriptive name for your source (e.g., "My Game Library")
+   - **Type:** Choose from:
+     - **Filesystem:** Imports games from a path on disk. Requires version-based folder structure, and supports archived games. Use this for new Drop-style libraries.
+     - **FlatFilesystem:** Imports games from a path on disk, but without a separate version subfolder. Useful when migrating an existing library to Drop.
+   - **Path:** Enter the path to your game library in your docker container (e.g., `/library`)
+4. **Save the configuration**
 
 ## Step 6: Import Your Games
 
