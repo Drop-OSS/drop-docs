@@ -2,12 +2,10 @@ name: Deploy PR to Cloudflare Pages
 
 env:
     base_url: test.quexeky.dev
-    CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, closed]
 
 permissions:
   contents: read
@@ -48,9 +46,10 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy build --project-name=${{ env.PR_NUMBER }}
+          projectName: rough-math-f97a
+          directory: build
 
           
     outputs:
-      previewUrl: https://${{ env.PR_NUMBER }}.$${{ env.base_url }}
+      previewUrl: ${{ steps.deploy.outputs.preview_url }}
 
