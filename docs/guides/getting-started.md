@@ -19,8 +19,6 @@ Create a `compose.yaml` file in your desired directory:
 services:
   postgres:
     image: postgres:14-alpine
-    ports:
-      - 5432:5432
     healthcheck:
       test: pg_isready -d drop -U drop
       interval: 30s
