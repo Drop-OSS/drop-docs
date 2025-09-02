@@ -49,6 +49,7 @@ services:
 - [GiantBomb](../metadata/giantbomb.md)
 - [IGDB](../metadata/igdb.md)
 - [PCGamingWiki](../metadata/pcgamingwiki.md)
+- Manual - you can import games without metadata and enter it yourself. 
 
 :::tip
 If you want to, you can generate a more secure PostgreSQL username & password.
