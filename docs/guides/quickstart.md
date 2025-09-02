@@ -10,6 +10,8 @@ The easiest way to get Drop running is using our pre-built Docker container.
 services:
   postgres:
     image: postgres:14-alpine
+    ports:
+      - 5432:5432
     healthcheck:
       test: pg_isready -d drop -U drop
       interval: 30s
@@ -47,6 +49,7 @@ services:
 - [GiantBomb](../metadata/giantbomb.md)
 - [IGDB](../metadata/igdb.md)
 - [PCGamingWiki](../metadata/pcgamingwiki.md)
+- Manual - you can import games without metadata and enter it yourself. 
 
 :::tip
 If you want to, you can generate a more secure PostgreSQL username & password.

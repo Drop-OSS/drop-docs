@@ -5,6 +5,7 @@ This comprehensive guide walks you through the complete setup process for Drop, 
 ## Prerequisites
 
 Before starting, ensure you have:
+
 - Docker and Docker Compose installed
 - A machine with at least 4GB RAM and 10GB free disk space
 - Network access for downloading game metadata
@@ -19,6 +20,8 @@ Create a `compose.yaml` file in your desired directory:
 services:
   postgres:
     image: postgres:14-alpine
+    ports:
+      - 5432:5432
     healthcheck:
       test: pg_isready -d drop -U drop
       interval: 30s
@@ -47,10 +50,12 @@ services:
 ```
 
 **Important volumes:**
+
 - `./library`: Where you'll place your games for import
 - `./data`: Where Drop stores metadata and objects
 
 Start the services:
+
 ```bash
 docker-compose up -d
 ```
@@ -69,6 +74,7 @@ docker-compose logs drop
 ```
 
 Look for lines similar to:
+
 ```
 Setup URL: http://localhost:3000/setup?key=abc123def456ghi789jkl012mno345pqr678stu901vwx234yz
 ```
@@ -77,15 +83,17 @@ Setup URL: http://localhost:3000/setup?key=abc123def456ghi789jkl012mno345pqr678s
 
 :::tip
 If you can't find the setup key or URL, restart the container and check the logs again:
+
 ```bash
 docker-compose restart drop
 docker-compose logs drop
 ```
+
 :::
 
 ## Step 3: Configure Metadata Providers
 
-Drop requires at least one metadata provider to fetch game information. Choose one or more:
+Drop can _optionally_ import metadata from external sources for your library. If no metadata providers are set up and accessible, you'll have to import games without metadata and write it manually.
 
 ### GiantBomb (Recommended for beginners)
 
@@ -95,7 +103,7 @@ Drop requires at least one metadata provider to fetch game information. Choose o
 
 For detailed instructions, see [GiantBomb Configuration](../metadata/giantbomb.md).
 
-### IGDB (Alternative option)
+### IGDB
 
 1. **Follow setup guide:** Visit [IGDB API documentation](https://api-docs.igdb.com/#getting-started)
 2. **Get credentials:** You'll need both `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`
@@ -103,9 +111,11 @@ For detailed instructions, see [GiantBomb Configuration](../metadata/giantbomb.m
 
 For detailed instructions, see [IGDB Configuration](../metadata/igdb.md).
 
-### PCGamingWiki (Optional)
+### PCGamingWiki
 
-For additional game information, see [PCGamingWiki Configuration](../metadata/pcgamingwiki.md).
+PCGamingWiki requires no additional setup and is automatically enabled, if accessible.
+
+For more information, see [PCGamingWiki Configuration](../metadata/pcgamingwiki.md).
 
 ## Step 4: Access the Setup Wizard
 
@@ -124,6 +134,7 @@ Keep your admin credentials secure - you'll need them to manage your Drop instan
 Drop supports two library formats:
 
 #### Drop-style (Recommended)
+
 ```
 /library/
   MyGame/
@@ -138,6 +149,7 @@ Drop supports two library formats:
 ```
 
 #### Flat-style (Compatibility)
+
 ```
 /library/
   MyGame/
@@ -191,6 +203,7 @@ Version imports happen for each update. This generates the data clients need to 
 For clients to connect, your Drop instance needs to be accessible:
 
 #### Local Network Access
+
 - **Find your server's IP address**
 - **Update `EXTERNAL_URL`** in your `compose.yaml`:
   ```yaml
@@ -231,6 +244,7 @@ For advanced exposure options, see [Exposing Your Instance](exposing.md).
 If you encounter issues:
 
 1. **Check server logs:**
+
    ```bash
    docker-compose logs drop
    ```
@@ -248,4 +262,4 @@ If you encounter issues:
 - **Configure additional metadata providers** for better game information
 - **Join the community** for support and feature requests
 
-For detailed information on any topic, refer to the specific documentation pages linked throughout this guide. 
+For detailed information on any topic, refer to the specific documentation pages linked throughout this guide.
