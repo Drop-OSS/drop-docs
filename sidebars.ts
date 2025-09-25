@@ -19,7 +19,6 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Admin Guides",
       items: [
-        "guides/getting-started",
         "guides/quickstart",
         "guides/exposing",
         "guides/server-troubleshooting",
