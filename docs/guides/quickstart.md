@@ -10,8 +10,6 @@ The easiest way to get Drop running is using our pre-built Docker container.
 services:
   postgres:
     image: postgres:14-alpine
-    ports:
-      - 5432:5432
     healthcheck:
       test: pg_isready -d drop -U drop
       interval: 30s
