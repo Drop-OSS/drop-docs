@@ -10,7 +10,7 @@ To compile:
 
 - Rust (nightly)
 - Node.js v20
-- `yarn` (v4) package manager
+- `pnpm` package manager
 - `git` VCS
 - Docker
 
@@ -28,22 +28,22 @@ Get started by cloning the `droplet` source code, and then enter the directory:
 git clone https://github.com/Drop-OSS/droplet.git
 ```
 
-Install the dependencies with `yarn`:
+Install the dependencies with `pnpm`:
 
 ```shell
-yarn
+pnpm
 ```
 
 And then compile the package with the build script:
 
 ```shell
-yarn build
+pnpm build
 ```
 
-Because we're building this locally, setup the yarn link so we can use this package while building the server:
+Because we're building this locally, setup the pnpm link so we can use this package while building the server:
 
 ```shell
-yarn link
+pnpm link
 ```
 
 ### Building `drop`
@@ -59,22 +59,22 @@ git clone https://github.com/Drop-OSS/drop.git
 Then, link your build `droplet` package:
 
 ```shell
-yarn link "@drop-oss/droplet"
+pnpm link "@drop-oss/droplet"
 ```
 
 Then, install dependencies:
 
 ```shell
-yarn
+pnpm
 ```
 
 Then, build the application:
 
 ```
-yarn build
+pnpm build
 ```
 
-To package it into a Docker container, remove the build commands in the provided `Dockerfile`'s build-system (`yarn install` and `yarn build`), and then build the Docker image:
+To package it into a Docker container, remove the build commands in the provided `Dockerfile`'s build-system (`pnpm install` and `pnpm build`), and then build the Docker image:
 
 ```shell
 docker build . -t drop
@@ -88,13 +88,13 @@ To build drop-app, run:
 git clone https://github.com/Drop-OSS/drop-app.git
 cd drop-app
 git checkout main
-yarn
-yarn tauri build
+pnpm
+pnpm tauri build
 ```
 
 If the command is successful, you can find the generated assets in: `src-tauri/target/release/bundle`. You can find the AppImage in the `appimage` folder.
 
-If the `yarn tauri build` command fails, you can try adding `--verbose` to get the error details.
+If the `pnpm tauri build` command fails, you can try adding `--verbose` to get the error details.
 
 If you get this type of error:
 
@@ -107,7 +107,7 @@ Then you can run the following:
 
 ```shell
 sudo ln -s /usr/lib/libavif.so.16 /usr/lib/libavif.so.15
-NO_STRIP=true yarn tauri build
+NO_STRIP=true pnpm tauri build
 ```
 
 This is a known issue in [Tauri](https://github.com/tauri-apps/tauri/issues/5781#issuecomment-1758815710).
