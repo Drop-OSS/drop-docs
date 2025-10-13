@@ -9,8 +9,8 @@ Unfortunately, we don't have the time or resources to build and debug our softwa
 To compile:
 
 - Rust (nightly)
-- Node.js v20
-- `yarn` (v4) package manager
+- Node.js 22.16+
+- `pnpm` package manager
 - `git` VCS
 - Docker
 
@@ -65,16 +65,16 @@ yarn link "@drop-oss/droplet"
 Then, install dependencies:
 
 ```shell
-yarn
+pnpm install
 ```
 
 Then, build the application:
 
 ```
-yarn build
+pnpm build
 ```
 
-To package it into a Docker container, remove the build commands in the provided `Dockerfile`'s build-system (`yarn install` and `yarn build`), and then build the Docker image:
+To package it into a Docker container, remove the build commands in the provided `Dockerfile`'s build-system (`pnpm install` and `pnpm build`), and then build the Docker image:
 
 ```shell
 docker build . -t drop
