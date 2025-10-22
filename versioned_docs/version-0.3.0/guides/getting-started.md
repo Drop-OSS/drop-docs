@@ -233,7 +233,7 @@ For advanced exposure options, see [Exposing Your Instance](exposing.md).
 ### User Management
 
 - **Create additional users** in the admin interface
-- **Set up authentication** - see [Authentication](../authentication/cli) for OIDC options
+- **Set up authentication** - see [Authentication](../authentication/oidc) for OIDC options
 - **Manage permissions** for different user roles
 
 ### Library Management
