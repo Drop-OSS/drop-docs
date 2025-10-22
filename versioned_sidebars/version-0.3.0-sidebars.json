@@ -12,27 +12,17 @@
     {
       "type": "category",
       "label": "User Guides",
-      "items": [
-        "guides/client",
-        "guides/client-troubleshooting"
-      ]
+      "items": ["guides/getting-started", "guides/client-troubleshooting"]
     },
     {
       "type": "category",
       "label": "Metadata",
-      "items": [
-        "metadata/giantbomb",
-        "metadata/igdb",
-        "metadata/pcgamingwiki"
-      ]
+      "items": ["metadata/giantbomb", "metadata/igdb", "metadata/pcgamingwiki"]
     },
     {
       "type": "category",
       "label": "Authentication",
-      "items": [
-        "authentication/simple",
-        "authentication/oidc"
-      ]
+      "items": ["authentication/simple", "authentication/oidc"]
     },
     {
       "type": "category",
@@ -46,9 +36,7 @@
     {
       "type": "category",
       "label": "Documentation",
-      "items": [
-        "library"
-      ]
+      "items": ["library"]
     }
   ]
 }
