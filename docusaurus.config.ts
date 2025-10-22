@@ -86,8 +86,8 @@ const config: Config = {
               to: "/docs/guides/quickstart",
             },
             {
-              label: "Client Getting Started",
-              to: "/docs/guides/client",
+              label: "Getting Started",
+              to: "/docs/guides/getting-started",
             },
           ],
         },

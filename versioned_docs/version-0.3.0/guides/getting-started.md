@@ -206,11 +206,14 @@ For clients to connect, your Drop instance needs to be accessible:
 
 - **Find your server's IP address**
 - **Update `EXTERNAL_URL`** in your `compose.yaml`:
+
   ```yaml
   environment:
     - EXTERNAL_URL=http://[your-drop-server-ip]:3000
   ```
+
 - **Restart the container:**
+
   ```bash
   docker-compose down && docker-compose up -d
   ```
@@ -230,7 +233,7 @@ For advanced exposure options, see [Exposing Your Instance](exposing.md).
 ### User Management
 
 - **Create additional users** in the admin interface
-- **Set up authentication** - see [Authentication](../authentication/) for OIDC options
+- **Set up authentication** - see [Authentication](../authentication/cli) for OIDC options
 - **Manage permissions** for different user roles
 
 ### Library Management

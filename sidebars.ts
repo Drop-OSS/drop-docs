@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "User Guides",
-      items: ["guides/client", "guides/client-troubleshooting"],
+      items: ["guides/getting-started", "guides/client-troubleshooting"],
     },
     {
       type: "category",
