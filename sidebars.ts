@@ -37,6 +37,7 @@ const sidebars: SidebarsConfig = {
         "installing-drop-app/archlinux",
         "installing-drop-app/bazzite-steamdeck",
         "installing-drop-app/debian",
+        "installing-drop-app/fedora",
         "installing-drop-app/macos",
         "installing-drop-app/ubuntu",
         "installing-drop-app/windows",
