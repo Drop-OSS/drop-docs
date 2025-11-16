@@ -1,4 +1,4 @@
-# Installing the drop-app client on archlinux
+# Installing the drop-app client on Archlinux
 
 To install the client application on your system,
 you will need to be able to install packages from the [AUR](https://aur.archlinux.org/).
