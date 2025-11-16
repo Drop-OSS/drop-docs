@@ -17,7 +17,7 @@ It will take a few seconds to prepare the container.
 Once ready, you need to install the `yay` package manager to be able to install packages from the [AUR](https://aur.archlinux.org/).
 
 ```bash
-# This enables the multilib repository which is needed to install umu-run and drop-app
+# This enables the multilib repository which is needed to install umu-launcher and drop-app
 sudo sh -c 'printf "\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf'
 # Updates repositories and system
 sudo pacman -Syu --noconfirm
@@ -33,37 +33,34 @@ cd .. && rm -rf ./yay
 Next, you can install drop and its dependencies:
 
 - `libayatana-appindicator` is the library needed to display drop-app in the systray.
-- `umu-run` is needed to start windows games in drop-app.
-  If you only intend on installing Linux native games, then you can remove it from the next command.
-
-You will be asked to choose between a few providers.
-You can choose `gnu-free-fonts` when asked about `ttf-font`,
-and you can choose `lib32-vulkan-radeon` when asked about `lib32-vulkan-driver`.
-
-```
-📦[deck@drop-app ~]$ yay -S libayatana-appindicator umu-run drop-oss-app-bin
-Sync Explicit (1): umu-launcher-1.2.9-1
-resolving dependencies...
-:: There are 11 providers available for ttf-font:
-:: Repository extra
-   1) gnu-free-fonts  2) noto-fonts  3) ttf-bitstream-vera  4) ttf-croscore  5) ttf-dejavu  6) ttf-droid  7) ttf-ibm-plex  8) ttf-input  9) ttf-input-nerd
-   10) ttf-liberation  11) ttf-roboto
-
-Enter a number (default=1):
-:: There are 10 providers available for lib32-vulkan-driver:
-:: Repository multilib
-   1) lib32-nvidia-utils  2) lib32-vulkan-asahi  3) lib32-vulkan-dzn  4) lib32-vulkan-freedreno  5) lib32-vulkan-gfxstream  6) lib32-vulkan-intel
-   7) lib32-vulkan-nouveau  8) lib32-vulkan-radeon  9) lib32-vulkan-swrast  10) lib32-vulkan-virtio
-
-Enter a number (default=1): 8
-```
-
-Once the installation is complete, you will need to export `umu-run` and then `drop-app` to SteamOS.
+- `umu-launcher` is needed to start windows games in drop-app.
 
 ```bash
-distrobox-export --bin /usr/bin/umu-run
+yay -S --noconfirm libayatana-appindicator gnu-free-fonts
+```
+
+Then you will need to install a vulkan driver.
+If you are using an Intel GPU, you can run:
+
+```bash
+yay -S --noconfirm lib32-vulkan-intel
+```
+
+If you are using an AMD GPU, you can run:
+
+```bash
+yay -S --noconfirm lib32-vulkan-radeon
+```
+
+Then you can install drop-app:
+
+```bash
+yay -S --noconfirm drop-oss-app-bin umu-launcher
+```
+
+```bash
 distrobox-export --app drop-app
-# Go back to SteamOS
+# Go back to Bazzite
 exit
 ```
 

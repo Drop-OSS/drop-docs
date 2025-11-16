@@ -17,7 +17,7 @@ It will take a few seconds to prepare the container.
 Once ready, you need to install the `yay` package manager to be able to install packages from the [AUR](https://aur.archlinux.org/).
 
 ```bash
-# This enables the multilib repository which is needed to install umu-run and drop-app
+# This enables the multilib repository which is needed to install umu-launcher and drop-app
 sudo sh -c 'printf "\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf'
 # Updates repositories and system
 sudo pacman -Syu --noconfirm
@@ -36,12 +36,8 @@ Next, you can install drop and its dependencies:
 
 ```bash
 yay -S --noconfirm libayatana-appindicator gnu-free-fonts
-yay -S umu-run drop-oss-app-bin
+yay -S umu-launcher drop-oss-app-bin
 ```
-
-You will need to choose a vulkan driver.
-If you are using an intel GPU, choose `lib32-vulkan-intel`.
-If you are using an AMD GPU, choose `lib32-vulkan-radeon`.
 
 Once the installation is complete, you will need to export `drop-app` to SteamOS.
 
