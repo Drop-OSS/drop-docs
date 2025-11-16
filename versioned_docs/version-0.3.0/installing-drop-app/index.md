@@ -2,13 +2,13 @@
 
 Available platforms:
 
-| Platform             | Guide                     |
-| -------------------- | ------------------------- |
-| Archlinux            | [link](archlinux)         |
-| Bazzite              | [link](bazzite-steamdeck) |
-| Debian               | [link](debian)            |
-| Fedora               | [link](fedora)            |
-| MacOs                | [link](macos)             |
-| SteamOS (Steam Deck) | [link](bazzite-steamdeck) |
-| Ubuntu               | [link](ubuntu)            |
-| Windows              | [link](windows)           |
+| Platform             | Guide             |
+| -------------------- | ----------------- |
+| Archlinux            | [link](archlinux) |
+| Bazzite              | [link](bazzite)   |
+| Debian               | [link](debian)    |
+| Fedora               | [link](fedora)    |
+| MacOs                | [link](macos)     |
+| SteamOS (Steam Deck) | [link](steamdeck) |
+| Ubuntu               | [link](ubuntu)    |
+| Windows              | [link](windows)   |
