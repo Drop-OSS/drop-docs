@@ -24,5 +24,5 @@ yay -S drop-oss-app-bin
 ### Uninstalling drop-app
 
 ```bash
-yay -R drop-oss-app-bin libayatana-appindicator rust-nightly-bin
+yay -R drop-oss-app-bin libayatana-appindicator
 ```
