@@ -11,7 +11,7 @@ sudo apt install libayatana-appindicator3-1
 
 ## Installing drop-app
 
-To install drop-app on Debian, [simply download the deb package](https://github.com/Drop-OSS/drop-app/releases/download/v0.3.4/Drop.Desktop.Client_0.3.4_amd64.deb) and open the downloaded file.
+To install drop-app on Debian, simply download the `amd64.deb` or `arm64.deb` package [from this page](https://github.com/Drop-OSS/drop-app/releases/latest) and open the downloaded file.
 It will open it in the Software app. You can click Install on this page.
 
 ![Installing drop-app on the Debian Software app](installing-drop-app-on-debian-software.png)

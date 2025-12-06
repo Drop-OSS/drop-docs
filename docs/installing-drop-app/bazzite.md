@@ -30,13 +30,10 @@ makepkg -si --noconfirm
 cd .. && rm -rf ./yay
 ```
 
-Next, you can install drop and its dependencies:
-
-- `libayatana-appindicator` is the library needed to display drop-app in the systray.
-- `umu-launcher` is needed to start windows games in drop-app.
+Next, you can install dependencies:
 
 ```bash
-yay -S --noconfirm libayatana-appindicator gnu-free-fonts
+yay -S --noconfirm gnu-free-fonts
 ```
 
 Then you will need to install a vulkan driver.
@@ -55,7 +52,7 @@ yay -S --noconfirm lib32-vulkan-radeon
 Then you can install drop-app:
 
 ```bash
-yay -S --noconfirm drop-oss-app-bin umu-launcher
+yay -S --noconfirm drop-oss-app-bin
 ```
 
 ```bash

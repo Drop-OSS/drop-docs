@@ -7,22 +7,18 @@ These extend the default package manager `pacman` with the ability
 to download and install packages from the AUR.
 If you do not have one installed, you can [install yay](https://github.com/Jguer/yay).
 
-## Installing `libayatana-appindicator`
-
-This library is dependency of drop-app. Without it, drop-app will crash on start up.
-
-```bash
-yay -S libayatana-appindicator
-```
-
 ## Installing drop-app
 
 ```bash
 yay -S drop-oss-app-bin
 ```
 
-### Uninstalling drop-app
+## Updating drop-app
+
+To update drop-app, run `yay`. If an update is available, `yay` will prompt you to update it.
+
+## Uninstalling drop-app
 
 ```bash
-yay -R drop-oss-app-bin libayatana-appindicator
+yay -R drop-oss-app-bin
 ```

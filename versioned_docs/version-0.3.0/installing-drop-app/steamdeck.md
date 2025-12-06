@@ -32,16 +32,10 @@ cd .. && rm -rf ./yay
 
 Next, you can install drop and its dependencies:
 
-- `libayatana-appindicator` is the library needed to display drop-app in the systray.
-
 ```bash
-yay -S --noconfirm libayatana-appindicator gnu-free-fonts
-yay -S umu-launcher drop-oss-app-bin
+yay -S --noconfirm gnu-free-fonts
+yay -S --noconfirm drop-oss-app-bin
 ```
-
-You will need to choose a vulkan driver.
-If you are using an intel GPU, choose `lib32-vulkan-intel`.
-If you are using an AMD GPU, choose `lib32-vulkan-radeon`.
 
 Once the installation is complete, you will need to export `drop-app` to SteamOS.
 
@@ -52,6 +46,14 @@ exit
 ```
 
 The drop-app application should be appear in your application menu.
+
+## Run games
+
+You can start games while in Desktop Mode, but the controller will not be fully working.
+It is recommended to add Drop app as a "Non Steam Game" in Steam in Desktop Mode.
+Once added, you can go to Gaming Mode and start Drop App from the "Non Steam Games" tab in the library.
+It might take a few seconds to startup.
+Once loaded, you can use the touch screen to find the game you want to play and then tap "Run".
 
 ## Update drop-app
 

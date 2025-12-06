@@ -1,6 +1,6 @@
 # Installing drop-app on Windows
 
-To install drop-app on Windows, simply [download the setup file](https://github.com/Drop-OSS/drop-app/releases/download/v0.3.4/Drop.Desktop.Client_0.3.4_x64-setup.exe) and run it.
+To install drop-app on Windows, simply download the `setup.exe` file [from this page](https://github.com/Drop-OSS/drop-app/releases/latest) and run it.
 
 ## Uninstalling drop-app
 
