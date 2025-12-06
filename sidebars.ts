@@ -31,6 +31,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Installing Drop-app",
+      items: [
+        "installing-drop-app/index",
+        "installing-drop-app/archlinux",
+        "installing-drop-app/bazzite",
+        "installing-drop-app/debian",
+        "installing-drop-app/fedora",
+        "installing-drop-app/macos",
+        "installing-drop-app/steamdeck",
+        "installing-drop-app/ubuntu",
+        "installing-drop-app/windows",
+      ],
+    },
+    {
+      type: "category",
       label: "Metadata",
       items: ["metadata/giantbomb", "metadata/igdb", "metadata/pcgamingwiki"],
     },
