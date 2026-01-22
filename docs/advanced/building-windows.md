@@ -5,7 +5,7 @@
 To compile drop-app on Windows, you'll need:
 
 - Node.js v22
-- `yarn` (v1/legacy) package manager
+- `pnpm` package manager
 - `git` VCS
 - Rust (stable)
 - Microsoft Visual Studio Build Tools or Visual Studio Community
@@ -18,6 +18,7 @@ We recommend using Node Version Manager for Windows to easily switch between Nod
 ### 1. Install nvm-windows
 
 1. **Download nvm-windows:**
+
    - Go to [nvm-windows releases](https://github.com/coreybutler/nvm-windows/releases)
    - Download the latest `nvm-setup.exe` file
    - Run the installer as Administrator
@@ -41,11 +42,10 @@ node --version
 npm --version
 ```
 
-### 4. Install yarn
+### 4. Install pnpm
 
 ```shell
-npm install -g yarn
-yarn --version
+corepack enable
 ```
 
 ## Installing Rust
@@ -53,6 +53,7 @@ yarn --version
 ### 1. Download Rust installer
 
 1. **Visit the official Rust website:**
+
    - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
    - Click "Download rustup-init.exe (64-bit)"
 
@@ -98,22 +99,22 @@ Now that you have all prerequisites installed, you can build drop-app:
 git clone https://github.com/Drop-OSS/drop-app.git
 cd drop-app
 git checkout develop
-yarn
-yarn tauri build
+pnpm
+pnpm tauri build
 ```
 
 **Important:** Make sure to use the `develop` branch for the latest features and fixes.
 
 If the command is successful, you can find the generated assets in: `src-tauri/target/release/bundle`. You can find the Windows installer in the `msi` folder.
 
-If the `yarn tauri build` command fails, you can try adding `--verbose` to get the error details.
+If the `pnpm tauri build` command fails, you can try adding `--verbose` to get the error details.
 
 ## Development Mode
 
 For live development with real-time updates, use the development mode:
 
 ```shell
-yarn tauri dev
+pnpm tauri dev
 ```
 
 This will start the application in development mode with hot reloading, allowing you to see changes immediately as you modify the code. The app will automatically restart when you save changes to your rust files.
@@ -125,17 +126,20 @@ This will start the application in development mode with hot reloading, allowing
 If you encounter build errors, try the following:
 
 1. **Ensure Rust is properly installed:**
+
    ```shell
    rustc --version
    cargo --version
    ```
 
 2. **Install Visual Studio Build Tools:**
+
    - Download and install [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022)
    - Make sure to include the "C++ build tools" workload
    - Restart your terminal after installation
 
 3. **Verify Node.js version:**
+
    ```shell
    node --version
    nvm list
@@ -143,26 +147,29 @@ If you encounter build errors, try the following:
    ```
 
 4. **Set up environment variables:**
+
    - Ensure `PATH` includes Rust and Node.js
    - Set `RUST_BACKTRACE=1` for detailed error messages
    - Restart your terminal after installing Rust
 
 5. **Clean and rebuild:**
    ```shell
-   yarn clean
-   yarn
-   yarn tauri build
+   pnpm clean
+   pnpm
+   pnpm tauri build
    ```
 
 ### Windows-Specific Issues
 
 1. **PowerShell execution policy:**
    If you get execution policy errors, run PowerShell as Administrator and execute:
+
    ```powershell
    Set-ExecutionPolicy RemoteSigned
    ```
 
 2. **Long path issues:**
+
    - Enable long path support in Windows Registry
    - Or clone the repository to a shorter path (e.g., `C:\drop-app`)
 
@@ -170,4 +177,4 @@ If you encounter build errors, try the following:
    - Temporarily disable antivirus during build
    - Add the project directory to antivirus exclusions
 
-**Note:** This page provides Windows-specific build instructions for drop-app. For general building information, see the [Building Drop OSS](building.md) page. 
+**Note:** This page provides Windows-specific build instructions for drop-app. For general building information, see the [Building Drop OSS](building.md) page.
